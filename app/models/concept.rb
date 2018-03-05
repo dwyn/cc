@@ -1,8 +1,8 @@
 class Concept < ApplicationRecord
   belongs_to :user
-  belongs_to :sections
+  belongs_to :section
   has_many :sections
-  has_mamy :languages
+  has_many :languages
 
   validates :title, presence: true
   validates :description, presence: true

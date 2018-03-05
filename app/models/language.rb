@@ -1,5 +1,5 @@
 class Language < ApplicationRecord
-  belongs_to :sections
+  belongs_to :section
   has_many :sections
   
 end
