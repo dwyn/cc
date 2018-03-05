@@ -47,7 +47,7 @@ Languages
   name
   section_id
 
-Join_table <--- Not sure what to name this fella>
+conceptsjoin <--- Not sure what to name this fella> 
   User_id
   Concept_id
   Moudle_id
