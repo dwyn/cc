@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-
+has_many :concepts
+has_many :sections, through: :concepts
 
 
   # Include default devise modules. Others available are:
