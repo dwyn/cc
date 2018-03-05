@@ -1,0 +1,2 @@
+class ConceptJoin < ApplicationRecord
+end

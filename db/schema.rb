@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180305060455) do
+ActiveRecord::Schema.define(version: 20180305071436) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "concept_joins", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "concept_id"
+    t.integer  "section_id"
+    t.integer  "language_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "concepts", force: :cascade do |t|
     t.string   "title"
