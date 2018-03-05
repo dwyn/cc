@@ -1,9 +1,4 @@
-# cc
-Concept Community.
-
-Concept Community is a platform for Flatiron faculty and students to submit concepts for future students to build for portfolio projects. Pretty excited about this actually. 
-
-At a high level, the app will have Users, Concepts, Sections, and languages. I am not 100% certain of how I will associate everything, but my gut tells me this is a good starting point for creating my tables or what have you... 
+# Specifications for the Rails Assessment
 
 Specs:
 - [x] Using Ruby on Rails for the project
@@ -27,28 +22,3 @@ Confirm:
 - [x] Limited logic in controllers
 - [x] Views use helper methods if appropriate
 - [x] Views use partials if appropriate
-
-
-Users
-  <!-- Devise will take care of most of the user functionality with regards to log in credentials -->
-  <!-- OmniAuth will help with using Flatirons API -->
-  <!-- Only flatiron students and faculty can log in. So no need for a sign up page -->
-
-Concepts
-  Title
-  Description
-  resource_links
-
-Sections
-  Title
-  Description
-
-Languages
-  name
-  section_id
-
-Join_table
-  User_id
-  Concept_id
-  Moudle_id
-  language_id
