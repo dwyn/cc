@@ -4,7 +4,7 @@ class Concept < ApplicationRecord
   has_many :sections
   has_many :languages
 
-  validates :title, presence: true
-  validates :description, presence: true
+  # validates :title, presence: true
+  # validates :description, presence: true
 
 end
