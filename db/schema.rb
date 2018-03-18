@@ -10,10 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-#NOT SURE WHY THIS DATABASE IS GIVING ME SO MUCH TROUBLE.
-# PERHAPS I SHOULD HAVE STUCK WITH SQLIT3?
-
-
 ActiveRecord::Schema.define(version: 20180305071436) do
 
   # These are extensions that must be enabled in order to support this database
