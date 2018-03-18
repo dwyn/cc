@@ -1,4 +1,5 @@
 #Notes for Concept Community
+Test
 ## i.e. Notes for future me. 
 
 It's a sad. I've had to ship my computer into Apple (yet again). So I'll just be reading and formulating next steps for the models, controllers, and views until I receive a new machine and can actually build the next steps out. By the way, why do we call it MVC and not MCV (or even VCM)? I digress...
