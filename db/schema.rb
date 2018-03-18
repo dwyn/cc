@@ -10,24 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180305071436) do
+ActiveRecord::Schema.define(version: 20180305055806) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "concept_joins", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "concept_id"
-    t.integer  "section_id"
-    t.integer  "language_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
 
   create_table "concepts", force: :cascade do |t|
     t.string   "title"
     t.string   "description"
     t.string   "resource_links"
+    t.integer  "user_id"
+    t.integer  "language_id"
+    t.integer  "section_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
@@ -35,6 +29,7 @@ ActiveRecord::Schema.define(version: 20180305071436) do
   create_table "languages", force: :cascade do |t|
     t.string   "name"
     t.integer  "section_id"
+    t.integer  "concept_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -42,11 +37,14 @@ ActiveRecord::Schema.define(version: 20180305071436) do
   create_table "sections", force: :cascade do |t|
     t.string   "title"
     t.string   "description"
+    t.integer  "language_id"
+    t.integer  "concept_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|
+    t.integer  "concept_id"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"

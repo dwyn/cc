@@ -4,6 +4,9 @@ class CreateSections < ActiveRecord::Migration[5.0]
       t.string :title
       t.string :description
 
+      t.integer :language_id
+      t.integer :concept_id
+    
       t.timestamps
     end
   end

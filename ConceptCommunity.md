@@ -1,8 +1,7 @@
 #Notes for Concept Community
-Test
-## i.e. Notes for future me. 
 
-It's a sad. I've had to ship my computer into Apple (yet again). So I'll just be reading and formulating next steps for the models, controllers, and views until I receive a new machine and can actually build the next steps out. By the way, why do we call it MVC and not MCV (or even VCM)? I digress...
+## i.e. Notes for future me. 
+It's a sad day. I've had to ship my computer into Apple (yet again). So I'll just be reading and formulating next steps for the models, controllers, and views until I receive a new machine and can actually build the next steps out. By the way, why do we call it MVC and not MCV (or even VCM)? I digress...
 
 ##Le DB SCHEMA
 Okay! So I’ve spent a lot of time trying to figure out the most effiecient set up for my db schema! (Since I have nothing better to do without a working computer and all). <a href:'https://hackernoon.com/domain-driven-design-in-elixir-4dc416ac0a36'>Hackermoon</a> had a very interesting write up on aggreggate roots which shifted my approach the setting up the db schema. 
@@ -60,7 +59,7 @@ The set up I originally had was as follows:
   end
 ``` 
 
-Now I dont think there is anything necessarily wrong with this set up, and I think it could work. But I consistently ask myself, “Is there a better way to do this?”. This question keeps me up at night seeing as how I am programming from a place of ignorance more often than not; I am perpetually worried I am doing something wrong. I dont mind being ignorant, I do mind staying ignorant. So that said, I chatted with some friends and I feel like I may have found a better way! Check me out:
+Now I dont think there is anything wrong with this set up. per se. But I consistently ask myself, “Is there a better way to do this?”. This question keeps me up at night seeing as how I am programming from a place of ignorance more often than not; I am perpetually worried I am doing something wrong. I dont mind being ignorant, I do mind staying ignorant. That said, I chatted with some friends and I feel like I may have found a better way! Check me out:
 
 ``` 
   create_table "concepts", force: :cascade do |t|
@@ -84,8 +83,8 @@ Now I dont think there is anything necessarily wrong with this set up, and I thi
 
   create_table "sections", force: :cascade do |t|
     t.string   "title"
-    
     t.string   "description"
+ 
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
