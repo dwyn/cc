@@ -136,7 +136,7 @@ I figure a decent starting point for routes.rb would be to have nested resources
 		
 		  devise_for :users
 		
-		  resources :games do
+		  resources :sections do
 		    resources :concepts, only: [:create, :show, :destroy, :index]
 		  end
 		

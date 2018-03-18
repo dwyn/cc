@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def user_submitted
-    @concepts = current_user.concepts.submitted_games
+    @concepts = current_user.concepts.submitted_concepts
   end
 
 end
