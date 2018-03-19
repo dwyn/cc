@@ -14,6 +14,8 @@ Section.create!(
   title: 'CLI Gem',
   description: 'Utilizing Object Oriented Programming to build and Publish a Ruby Gem.',
   language_id: 1
+  # raise.inspect
+  binding.pry
 )
 
 Concept.create!(
