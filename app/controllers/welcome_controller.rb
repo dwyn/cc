@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
 
 	def index
-		@concepts = Concept.all
+		@concept = Concept.all.sample
 	end
 
 end
