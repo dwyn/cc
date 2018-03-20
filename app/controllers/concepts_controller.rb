@@ -54,7 +54,7 @@ class ConceptsController < ApplicationController
   private
 
   def concept_params
-    params.require(:concept).permit(:title, :description, :resource_links)
+    params.require(:concept).permit(:title, :description, :resource_links) #:sections_attributes =>[:section_id ]
   end
 
 end

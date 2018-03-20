@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   devise_for :users
-
-  # resources :sections do
-  #   resources :concepts, only: [:create, :show, :destroy, :index]
-  # end
+  resources :users
+  resources :concepts do
+    resources :sections, only: [:index, :show]
+  end
 end
