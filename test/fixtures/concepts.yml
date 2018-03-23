@@ -4,8 +4,12 @@ one:
   title: MyString
   description: MyString
   resource_links: MyString
+  user_id: 1
+  submitted: false
 
 two:
   title: MyString
   description: MyString
   resource_links: MyString
+  user_id: 1
+  submitted: false
