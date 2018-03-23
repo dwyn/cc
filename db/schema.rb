@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180318173751) do
+ActiveRecord::Schema.define(version: 20180323030232) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,17 +20,14 @@ ActiveRecord::Schema.define(version: 20180318173751) do
     t.string   "description"
     t.string   "resource_links"
     t.integer  "user_id"
-    t.integer  "language_id"
-    t.integer  "section_id"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
-    t.boolean  "submitted",      default: false
+    t.boolean  "submitted"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "languages", force: :cascade do |t|
     t.string   "name"
     t.integer  "section_id"
-    t.integer  "concept_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -38,7 +35,6 @@ ActiveRecord::Schema.define(version: 20180318173751) do
   create_table "sections", force: :cascade do |t|
     t.string   "title"
     t.string   "description"
-    t.integer  "language_id"
     t.integer  "concept_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
