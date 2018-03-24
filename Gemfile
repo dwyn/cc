@@ -56,3 +56,4 @@ gem 'devise', '~> 4.4.1'
 gem 'omniauth', '~> 1.6.1'
 gem 'pry-rails', :group => :development
 gem 'bootstrap-sass'
+gem 'bootstrap', '~> 4.0.0'
