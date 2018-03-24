@@ -19,7 +19,7 @@ Concept.create!(
   resource_links: 'www.dwyn.nyc', 
   user_id: 1
 )
-binding.pry
+
 Language.create!(
   name: 'Ruby',
   section_id: 1
