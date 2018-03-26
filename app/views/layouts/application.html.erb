@@ -5,9 +5,6 @@
     <%= csrf_meta_tags %>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
@@ -27,7 +24,11 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">I dunno</a>
+              <% if signed_in? %>
+                <a class="nav-link" href="#"> <%= current_user.username %> </a>
+              <% else %>
+                <a class="nav-link" href="#"> Please sign up or log in! </a>
+              <% end %>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Sections</a>
@@ -47,7 +48,7 @@
 
 
     <!-- Footer -->
-    <footer class="py-5 #BEF1FD fixed-bottom">
+    <footer class="py-5 bg-dark">
       <div class="container">
         <p class="m-0 text-center text-white">Copyright &copy; Concept Community 2018</p>
       </div>

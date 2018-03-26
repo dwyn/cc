@@ -55,11 +55,12 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise', '~> 4.4.1'
 gem 'omniauth', '~> 1.6.1'
 gem 'pry-rails', :group => :development
-# gem 'bootstrap', '~> 4.0.0'
+gem 'bootstrap'
+gem 'bootstrap-sass'
 
-source 'https://rails-assets.org' do
-  gem 'rails-assets-bootstrap'
-  gem 'rails-assets-bootstrap-sass'
-  gem 'rails-assets-jquery'
-  gem 'rails-assets-tether'
-end
+# source 'https://rails-assets.org' do
+#   gem 'rails-assets-bootstrap'
+#   gem 'rails-assets-bootstrap-sass'
+#   # gem 'rails-assets-jquery'
+#   gem 'rails-assets-tether'
+# end
