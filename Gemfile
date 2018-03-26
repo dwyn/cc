@@ -58,9 +58,6 @@ gem 'pry-rails', :group => :development
 gem 'bootstrap'
 gem 'bootstrap-sass'
 
-# source 'https://rails-assets.org' do
-#   gem 'rails-assets-bootstrap'
-#   gem 'rails-assets-bootstrap-sass'
-#   # gem 'rails-assets-jquery'
-#   gem 'rails-assets-tether'
-# end
+gem "therubyracer"
+gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
