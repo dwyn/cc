@@ -7,11 +7,26 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-User.create!(
-  display_name: 'D W A Y N E!',
-  email: 'dwayne@gmail.com',
-  encrypted_password: '1234'
+# User.create!(
+#   display_name: 'D W A Y N E!',
+#   email: 'dwayne@gmail.com',
+#   encrypted_password: '1234'
+# )
+
+u = User.new(
+  display_name: "D W A Y N E!",
+  email: "dwayne@gmail.com", 
+  encrypted_password: "$2a$10$5eoHh6M2q4GjGkHClO.NqebWWhS94D8rNj5Ot6CB2qrbn7IrTfkSa", 
+  reset_password_token: nil, 
+  reset_password_sent_at: nil, 
+  remember_created_at: nil, 
+  sign_in_count: 1, 
+  current_sign_in_at: "2014-12-31 22:27:09", 
+  last_sign_in_at: "2014-12-31 22:27:09", 
+  current_sign_in_ip: "127.0.0.1", 
+  last_sign_in_ip: "127.0.0.1", 
 )
+u.save!(validate: false)
 
 Concept.create!(
   title: 'Tic Tac Toe', 

@@ -7,18 +7,7 @@
   </head>
 
   <body>
-
-
-
-
-
-    <% if signed_in? %>
-      <a class="nav-link" href="#"> <%= current_user.username %> </a>
-    <% else %>
-      <a class="nav-link" href="#"> Please sign up or log in! </a>
-    <% end %>
-      <br>
-      <br>
+    <%= render 'layouts/nav' %>
 
       <%= yield %>
 

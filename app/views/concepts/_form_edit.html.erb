@@ -1,0 +1,29 @@
+<div class="concept-form">
+
+  <h1 class= "text-center">Edit Your Concept</h1><br>
+
+  <%= form_for @concept do |f| %>
+    <div class="field row">
+      <%= f.label :title, class: "h4 col-2 col-form-label"%>
+      <%= f.text_field :title, class: "col-10 form-control" %>
+    </div>
+    <br>
+
+    <div class="field row">
+      <%= f.label :description, "Edit your Concept's description:" %> <br>
+      <%= f.text_area :description, class: "form-control col-9" %>
+    </div>
+    <br>
+
+    <div class="field row">
+      <%= f.label :notes, "Modify or add resource link:" %> <br>
+      <%= f.text_area :notes, class: "form-control col-9" %>
+    </div>
+
+    <br>
+
+    <%= f.submit "Submit Your Edits", :class=> "btn btn-primary" %>
+
+  <% end %>
+
+</div>
