@@ -1,4 +1,5 @@
 class ConceptsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :update, :destroy]
 
   def index
     @concepts = Concept.all
