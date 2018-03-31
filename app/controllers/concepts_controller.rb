@@ -14,7 +14,7 @@ class ConceptsController < ApplicationController
     @concept = current_user.concepts.build(concept_params)
     if @concept.save
       flash[:notice] = "Thank you for your submission!"
-      redirect_to user_path(current_user)
+      redirect_to concept_path(@concept)
     else
       flash[:alert] = "Unfortunately your concept was not saved."
       render :new
@@ -23,11 +23,6 @@ class ConceptsController < ApplicationController
 
   def show
     @concept = Concept.find(params[:id])
-    @section = @concept.sections.build
-    respond_to do |format|
-      format.html {render :show}
-      format.json {render json: @concept.to_json}
-    end
   end
 
   def edit
@@ -38,7 +33,7 @@ class ConceptsController < ApplicationController
     @concept = Concept.find(params[:id])
     if @concept.update(concept_params)
       flash[:notice] = "Thanks for the update!."
-      redirect_to user_path(current_user)
+      redirect_to concept_path(@concept)
     else
       flash[:alert] = "Update unsuccessful."
       render :edit
@@ -55,7 +50,7 @@ class ConceptsController < ApplicationController
   private
 
   def concept_params
-    params.require(:concept).permit(:title, :description, :resource_links) #:sections_attributes =>[:section_id ]
+    params.require(:concept).permit(:title, :description, :resource_links, section_ids:[]) #:sections_attributes =>[:section_id ]
   end
 
 end

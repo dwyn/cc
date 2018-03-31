@@ -21,7 +21,11 @@
     </div>
     <br>
 
-    <br>
+    <%= f.label :section %>
+      <%= f.collection_check_boxes :section_ids, Section.all, :id, :title %>
+      <%= f.fields_for :sections, @concept.sections.build do |sections_fields| %>
+      <%= sections_fields.text_field :title %>
+    <% end %><br>
 
     <%= f.submit "Submit Concept!", :class=> "btn btn-primary" %>
 
