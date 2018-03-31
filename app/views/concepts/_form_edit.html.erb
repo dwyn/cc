@@ -18,10 +18,15 @@
     <div class="field row">
       <%= f.label :resource_links, "Modify or add resource link:" %> <br>
       <%= f.text_area :resource_links, class: "form-control col-9" %>
+    </div> <br>
+
+    <div>
+      <%= f.label :section %>
+        <%= f.collection_check_boxes :section_ids, Section.all, :id, :title %>
+        <%= f.fields_for :sections, @concept.sections.build do |sections_fields| %>
+        <%= sections_fields.text_field :title %>
+      <% end %><br>
     </div>
-
-    <br>
-
     <%= f.submit "Submit Your Edits", :class=> "btn btn-primary" %>
 
   <% end %>
