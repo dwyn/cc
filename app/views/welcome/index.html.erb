@@ -1,7 +1,16 @@
 <div class="row">
-  <div class="container-fluid col-md-8 col-md-offset-5 center-block">
-    <%= @concept.title %> <br>
-    <%= @concept.description %> <br>
-    <%= @concept.resource_links %> <br>
+  <div class="container-fluid col-md-8 col-md text-center center-block">
+   <div class="center"> <H2> CONCEPT OF THE DAY! </H2>
+
+          <!-- Random Concept -->
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="card-title"><%= @concept.title %></h2>
+          <p class="card-text"><%= @concept.description %>v</p>
+          <a href="#" class="btn btn-primary"><%= @concept.resource_links %></a>
+        </div>
+      </div>
+       <br>
+    </div>
   </div>
 </div>
