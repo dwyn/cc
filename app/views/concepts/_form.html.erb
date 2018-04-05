@@ -1,34 +1,31 @@
-<div class="concept-form">
+<form>
+  <div class="">
+    <h1 class= "text-center">New Concept</h1><br>
 
-  <h1 class= "text-center">New Concept</h1><br>
+    <%= form_for @concept do |f| %>
+      <div class="">
+        <%= f.label :title, class="form-control"%>
+        <%= f.text_field :title %>
+      </div>
+      <br>
 
-  <%= form_for @concept do |f| %>
-    <div class="field row">
-      <%= f.label :title, class: "h4 col-2 col-form-label"%>
-      <%= f.text_field :title, class: "col-10 form-control" %>
-    </div>
-    <br>
+      <div class="field row">
+        <%= f.label :description, "Tell us about your app idea!" %>
+        <%= f.text_area :description, class="form-control"%>
+      </div>
+      <br>
 
-    <div class="field row">
-      <%= f.label :description, "Tell us about your app idea!" %> <br>
-      <%= f.text_area :description, class: "form-control col-9" %>
-    </div>
-    <br>
+      <div class="field row">
+        <%= f.label :resource_links, "Share an URI that further explains your idea. Or don't. Either way is fine." %> <br>
+        <%= f.text_area :resource_links, class: "form-control" %>
+      </div>
+      <br>
 
-    <div class="field row">
-      <%= f.label :resource_links, "Share an URI that further explains your idea. Or don't. Either way is fine." %> <br>
-      <%= f.text_area :resource_links, class: "form-control col-9" %>
-    </div>
-    <br>
+      <%= f.label :section %>
+        <%= f.collection_check_boxes :section_ids, Section.all, :id, :title %> <br>
+        <%= f.collection_check_boxes :language_ids, Language.all, :id, :name %> <br>
+      <%= f.submit "Submit Concept!", :class=> "btn btn-primary" %>
 
-    <%= f.label :section %>
-      <%= f.collection_check_boxes :section_ids, Section.all, :id, :title %>
-      <%= f.fields_for :sections, @concept.sections.build do |sections_fields| %>
-      <%= sections_fields.text_field :title %>
-    <% end %><br>
-
-    <%= f.submit "Submit Concept!", :class=> "btn btn-primary" %>
-
-  <% end %>
-
-</div>
+    <% end %>
+  </div>
+</form>
