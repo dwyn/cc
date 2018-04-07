@@ -1,3 +1,5 @@
+require 'pry'
+
 class ConceptsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update, :destroy]
 
@@ -12,11 +14,24 @@ class ConceptsController < ApplicationController
 
   def create
     @concept = current_user.concepts.build(concept_params)
+    binding.pry
     if @concept.save
       flash[:notice] = "Thank you for your submission!"
-      redirect_to concept_path(@concept)
+      redirect_to concept_path(@concept) #<--- CHECK REDIRECT 
     else
       flash[:alert] = "Unfortunately your concept was not saved."
+      render :new
+    end
+  end
+
+  def create
+    binding.pry
+    @game = current_user.games.build(game_params)
+    if @game.save
+      flash[:notice] = "Game successfully created!"
+      redirect_to user_path(current_user)
+    else
+      flash[:alert] = "Game not saved."
       render :new
     end
   end
