@@ -13,6 +13,7 @@ class ConceptsController < ApplicationController
   end
 
   def create
+    binding.pry
     @concept = current_user.concepts.build(concept_params)
     binding.pry
     if @concept.save
@@ -20,18 +21,6 @@ class ConceptsController < ApplicationController
       redirect_to concept_path(@concept) #<--- CHECK REDIRECT 
     else
       flash[:alert] = "Unfortunately your concept was not saved."
-      render :new
-    end
-  end
-
-  def create
-    binding.pry
-    @game = current_user.games.build(game_params)
-    if @game.save
-      flash[:notice] = "Game successfully created!"
-      redirect_to user_path(current_user)
-    else
-      flash[:alert] = "Game not saved."
       render :new
     end
   end
@@ -65,7 +54,13 @@ class ConceptsController < ApplicationController
   private
 
   def concept_params
-    params.require(:concept).permit(:title, :description, :resource_links, section_ids:[]) #:sections_attributes =>[:section_id ]
+    params.require(:concept).permit(
+      :title,
+      :description,
+      :resource_links,
+      section_ids:[],
+      language_ids:[],
+      )
   end
 
 end
