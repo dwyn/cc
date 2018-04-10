@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
   
-  def show
-    @user = User.find(params[:id])
-  end
+  # def show
+  #   # binding.pry
+  #   @user = User.find(params[:id])
+  # end
 
 end

@@ -1,7 +1,7 @@
 require 'pry'
 
 class ConceptsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :update, :destroy]
+  before_action :authenticate_user!
 
   def index
     @concepts = Concept.all
@@ -17,8 +17,8 @@ class ConceptsController < ApplicationController
     @concept = current_user.concepts.build(concept_params)
     binding.pry
     if @concept.save
-      flash[:notice] = "Thank you for your submission!"
-      redirect_to concept_path(@concept) #<--- CHECK REDIRECT 
+      # flash[:notice] = "Thank you for your submission!"
+      redirect_to @concept #<--- CHECK REDIRECT 
     else
       flash[:alert] = "Unfortunately your concept was not saved."
       render :new

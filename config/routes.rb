@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
+  # get 'welcome/index'
   root 'welcome#index'
 
-  devise_for :users
   resources :users, only: [:show]
   resources :concepts
   resources :sections, only: [:index, :show]
+
+  devise_for :users do
+    get "/users/sign_out" => "devise/sessions#destroy", :as => :destroy_user_session
+  end
 end
