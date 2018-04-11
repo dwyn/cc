@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   resources :concepts
   resources :sections, only: [:index, :show]
 
-  devise_for :users do
-    get "/users/sign_out" => "devise/sessions#destroy", :as => :destroy_user_session
-  end
+  devise_for :users
+  # devise_for :users do
+  #   get "/users/sign_out" => "devise/sessions#destroy", :as => :destroy_user_session
+  # end
 end

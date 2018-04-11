@@ -5,6 +5,7 @@ class ConceptsController < ApplicationController
 
   def index
     @concepts = Concept.all
+    redirect_to root_path
   end
 
   def new
