@@ -4,9 +4,9 @@
 
   <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
     <ul class="navbar-nav ml-auto">
-      <% if signed_in? %>
+      <% if current_user %>
         <li class="nav-item active">
-          <%= link_to "Profile", user_path(current_user), class: "nav-link" %>
+          <%#= link_to "Profile", user_path(current_user), class: "nav-link" %>
         </li>
         <li class="nav-item active">
           <%= link_to "New Concept", new_concept_path, class: "nav-link" %>
