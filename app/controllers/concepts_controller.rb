@@ -14,11 +14,10 @@ class ConceptsController < ApplicationController
   end
 
   def create
-    binding.pry
+    @section = @concept.sections.build
     @concept = current_user.concepts.build(concept_params)
-    binding.pry
     if @concept.save
-      # flash[:notice] = "Thank you for your submission!"
+      flash[:notice] = "Thank you for your submission!"
       redirect_to @concept #<--- CHECK REDIRECT 
     else
       flash[:alert] = "Unfortunately your concept was not saved."

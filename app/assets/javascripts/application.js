@@ -18,3 +18,10 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+
+document.addEventListener("turbolinks:load", function() {
+    if ($('li.active').html() != undefined) {
+        $('li.active').removeClass('active');
+    }
+    $('a[href="' + location.pathname + '"]').parent('li').addClass('active');
+});
