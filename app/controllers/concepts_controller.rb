@@ -14,7 +14,6 @@ class ConceptsController < ApplicationController
   end
 
   def create
-    @section = @concept.sections.build
     @concept = current_user.concepts.build(concept_params)
     if @concept.save
       flash[:notice] = "Thank you for your submission!"
