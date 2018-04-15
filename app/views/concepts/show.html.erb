@@ -1,16 +1,13 @@
 <h2 class= "concept-title text-center"><%= @concept.title.upcase %></h2> <br>
 
-<div class="row col-12">
-  <div class="col-9 concept-description">
-    <strong>Description</strong>
-    <p><%= @concept.description %></p>
-  </div>
 
-  <div class="col-9 concept-description text-center">
-    <strong>Resource Links</strong> <br>
-    <p> @concept.resource_links </p>
-  </div>
-</div>
+  <strong>Description</strong>
+  <p><%= @concept.description %></p>
+
+
+  <strong>Resource Links</strong> <br>
+  <p> @concept.resource_links </p>
+
 
 <div class="col-12 text-center">
   <%= link_to "Edit Concept", edit_concept_path(@concept), class: "col-2 btn btn-info"  %>
