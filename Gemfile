@@ -39,4 +39,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise', '~> 4.4.3' 
 gem 'omniauth', '~> 1.6.1'
 gem 'bootstrap', '~> 4.0.0'
- 
+gem 'omni'
+gem 'dotenv-rails'
+gem 'omniauth-github'
