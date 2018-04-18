@@ -5,10 +5,8 @@ class User < ApplicationRecord
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :omniauthable, :omniauth_providers => [:github],
-        :database_authenticatable, :registerable,
-        :recoverable, :rememberable, :trackable, :validatable
-
+  devise :database_authenticatable, :registerable, 
+         :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:github]
 
   def self.new_with_session(params, session)
     super.tap do |user|
@@ -23,7 +21,7 @@ class User < ApplicationRecord
       user.email = auth.info.email
       user.password = Devise.friendly_token[0,20]
       user.name = auth.info.name   # assuming the user model has a name
-      user.image = auth.info.image # assuming the user model has an image
+      # user.image = auth.info.image # assuming the user model has an image
     end
   end
 
