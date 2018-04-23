@@ -1,13 +1,25 @@
 class SessionsController < ApplicationController
+
+  def new
+    redirect_to '/auth/twitter'
+  end
+
   def create
-    @user = User.find_or_create_by(uid: auth['uid']) do |u|
-      u.name = auth['info']['name']
-      u.email = auth['info']['email']
-    end
- 
-    session[:user_id] = @user.id
- 
-    render 'welcome/index'
+    auth = request.env["omniauth.auth"]
+    user = User.where(:provider => auth['provider'],
+                      :uid => auth['uid'].to_s).first || User.create_with_omniauth(auth)
+    reset_session
+    session[:user_id] = user.id
+    redirect_to root_url, :notice => 'Signed in!'
+  end
+
+  def destroy
+    reset_session
+    redirect_to root_url, :notice => 'Signed out!'
+  end
+
+  def failure
+    redirect_to root_url, :alert => "Authentication error: #{params[:message].humanize}"
   end
  
   private

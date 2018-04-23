@@ -1,13 +1,9 @@
 class User < ApplicationRecord
   has_many :concepts
 
-  devise 
-
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, 
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: %i[github]
-
+  
   def self.new_with_session(params, session)
     super.tap do |user|
       if data = session["devise.github_data"] && session["devise.github_data"]["extra"]["raw_info"]
