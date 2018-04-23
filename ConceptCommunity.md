@@ -1,4 +1,6 @@
 <!-- Good to know <%-# commented line -%> -->
+Notes to self:
+Look into OmniAuth redirect failure
 
 #Notes for Concept Community
 
