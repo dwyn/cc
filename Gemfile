@@ -1,4 +1,12 @@
 source 'https://rubygems.org'
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.3.3'
+end
+
+gem 'omniauth-github'
+gem 'devise', '~> 4.4.3'
+gem 'bootstrap', '~> 4.0.0'
+gem 'pry-rails'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -31,13 +39,6 @@ group :development do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'pry-rails'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-gem 'devise', '~> 4.4.3' 
-gem 'omniauth', '~> 1.6.1'
-gem 'bootstrap', '~> 4.0.0'
-gem 'dotenv-rails'
-gem 'omniauth-github'
