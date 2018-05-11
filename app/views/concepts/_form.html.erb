@@ -22,10 +22,10 @@
       <%= f.collection_check_boxes :section_ids, Section.all, :id, :title   %>
     </div>
 
-    <div class="form-group">
-      <%= f.label :language %> <br>
-      <%= f.collection_check_boxes :language_ids, Language.all, :id, :name %> <br>
-    </div>
+    <%= f.fields_for :sections, @section.languages do |t| %>
+      <%= t.label :language %> <br>
+      <%= t.collection_check_boxes :name, Language.all, :id, :name %> <br>
+    <% end %>
 
     <div class="form-group">
       <%= f.submit "Submit Concept!", :class=> "btn btn-primary" %>

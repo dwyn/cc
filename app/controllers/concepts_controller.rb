@@ -9,9 +9,12 @@ class ConceptsController < ApplicationController
   def new
     @concept = Concept.new
     @section = @concept.sections.build
+    @language = @section.languages.build
   end
 
   def create
+    # raise params.inspect
+    binding.pry
     @concept = current_user.concepts.build(concept_params)
     if @concept.save
       flash[:notice] = "Thank you for your submission!"
@@ -55,8 +58,8 @@ class ConceptsController < ApplicationController
       :title,
       :description,
       :resource_links,
-      section_ids:[],
-      language_ids:[],
+      :section_ids,
+      :languages_attributes => [:id]
       )
   end
 
