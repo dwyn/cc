@@ -14,8 +14,8 @@ class ConceptsController < ApplicationController
 
   def create
     # raise params.inspect
-    binding.pry
     @concept = current_user.concepts.build(concept_params)
+    binding.pry
     if @concept.save
       flash[:notice] = "Thank you for your submission!"
       redirect_to @concept #<--- CHECK REDIRECT 
@@ -58,8 +58,8 @@ class ConceptsController < ApplicationController
       :title,
       :description,
       :resource_links,
-      :section_ids,
-      :languages_attributes => [:id]
+      :section_ids => [],
+      :sections_attributes => [:language_ids => []]
       )
   end
 
