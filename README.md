@@ -1,6 +1,5 @@
 # Concept Community.
 
-
 In its infancy, Cocnept Community is a place for Flatiron Students and Faculty to submit ideas (read: concepts) for future students to build for portfolio projects. Specifically speaking when students can't think of something to build for a portfolio project. 
 
 ## Getting Started
