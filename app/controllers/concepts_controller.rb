@@ -17,6 +17,7 @@ class ConceptsController < ApplicationController
     @concept = current_user.concepts.build(concept_params)
     binding.pry
     if @concept.save
+      
       flash[:notice] = "Thank you for your submission!"
       redirect_to @concept #<--- CHECK REDIRECT 
     else

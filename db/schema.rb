@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20180507124957) do
 
   create_table "languages", force: :cascade do |t|
     t.string   "name"
-
+    
     t.integer  "section_id"
     
     t.datetime "created_at", null: false
