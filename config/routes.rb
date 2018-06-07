@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
-
   root to: 'welcome#index'
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
 
-  resources :concepts
-  resources :sections, only: [:index, :show]
+  resources :concepts, only: [:show] do
+    resources :sections, only: [:index, :show]
+  end
 
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+    resources :concepts, only: [:show, :index]
+  end
 end
-
-#Nest sections under concepts
