@@ -2,7 +2,12 @@ class ConceptsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update, :destroy]
 
   def index
-    @concepts = Concept.all
+    if params[:user_id]
+      @concepts = User.find(params[:user_id]).concepts
+    else
+      @concepts = Concept.all
+    end
+    
     redirect_to root_path
   end
 
@@ -15,7 +20,7 @@ class ConceptsController < ApplicationController
   def create
     # raise params.inspect
     @concept = current_user.concepts.build(concept_params)
-    binding.pry
+    # binding.pry
     if @concept.save
       
       flash[:notice] = "Thank you for your submission!"
@@ -46,16 +51,22 @@ class ConceptsController < ApplicationController
   end
 
   def destroy
+    binding.pry
     @concept = Concept.find(params[:id])
-    @concept.destroy
-    flash[:notice] = "Concept deletion successful"
-    redirect_to user_path(current_user)
+    if @concept.destroy
+      flash[:notice] = "Concept deletion successful"
+      redirect_to user_path(current_user)
+    else
+      flash[:notice] = "Concept could not be deleted at this time!"
+      render :show
+    end
   end
 
   private
 
   def concept_params
     params.require(:concept).permit(
+      :id,
       :title,
       :description,
       :resource_links,

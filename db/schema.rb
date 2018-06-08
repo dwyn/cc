@@ -19,20 +19,16 @@ ActiveRecord::Schema.define(version: 20180507124957) do
     t.string   "title"
     t.string   "description"
     t.string   "resource_links"
-    t.boolean  "submitted"
-
     t.integer  "user_id"
-    t.integer  "section_id"
-
+    t.boolean  "submitted"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.integer  "section_id"
   end
 
   create_table "languages", force: :cascade do |t|
     t.string   "name"
-    
     t.integer  "section_id"
-    
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -40,9 +36,7 @@ ActiveRecord::Schema.define(version: 20180507124957) do
   create_table "sections", force: :cascade do |t|
     t.string   "title"
     t.string   "description"
-
     t.integer  "concept_id"
-
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
