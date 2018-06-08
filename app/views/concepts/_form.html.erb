@@ -13,11 +13,6 @@
     </div>
 
     <div class="form-group">
-      <%= f.label :resource_links, "Share an URI that further explains your idea. Or don't. Either way is fine." %> <br>
-      <%= f.text_area :resource_links, class: "form-control" %>
-    </div>
-
-    <div class="form-group">
       <%= f.label :section %> <br>
       <%= f.collection_check_boxes :section_ids, Section.all, :id, :title   %>
     </div>

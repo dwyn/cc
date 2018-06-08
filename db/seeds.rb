@@ -7,12 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-# User.create!(
-#   display_name: 'D W A Y N E!',
-#   email: 'dwayne@gmail.com',
-#   encrypted_password: '1234'
-# )
-
 u = User.new(
   display_name: "D W A Y N E!",
   email: "dwayne@gmail.com", 
@@ -28,21 +22,50 @@ u = User.new(
 )
 u.save!(validate: false)
 
-Concept.create!(
-  title: 'Tic Tac Toe', 
-  description: 'Come on! Everyone knows Tic Tac Toe!',
-  resource_links: 'www.dwyn.nyc', 
-  user_id: 1
-)
-
 Language.create!(
   name: 'Ruby',
   section_id: 1
 )
 
+Language.create!(
+  name: 'Javascript',
+  section_id: 1
+)
+
+Language.create!(
+  name: 'HTML',
+  section_id: 1
+)
+
+Language.create!(
+  name: 'CSS',
+  section_id: 1
+)
+
+
 Section.create!(
   title: 'CLI Gem',
   description: 'Utilizing Object Oriented Programming to build and Publish a Ruby Gem.'
+)
+
+Section.create!(
+  title: 'Rails',
+  description: 'Build a fully functioning web app using the Rails framework'
+)
+
+Section.create!(
+  title: 'Sinatra',
+  description: 'Build a fully functioning web app using the Sinatra framework'
+)
+
+Section.create!(
+  title: 'Rails App with a jQuery Front End',
+  description: 'Style Rails web app using JQuery'
+)
+
+Section.create!(
+  title: 'React Redux Portfolio Project',
+  description: 'Build a beautiful React + Redux project!'
 )
 
 Concept.create!(
