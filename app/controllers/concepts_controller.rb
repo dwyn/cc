@@ -13,8 +13,7 @@ class ConceptsController < ApplicationController
 
   def new
     @concept = Concept.new
-    @section = @concept.sections.build
-    @language = @section.languages.build
+    # @sections = Section.all
   end
 
   def create

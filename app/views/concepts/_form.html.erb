@@ -13,16 +13,6 @@
     </div>
 
     <div class="form-group">
-      <%= f.label :section %> <br>
-      <%= f.collection_check_boxes :section_ids, Section.all, :id, :title   %>
-    </div>
-
-    <%= f.fields_for :sections, Section.all do |t| %>
-      <%= t.label :languages %> <br>
-      <%= t.collection_check_boxes :language_ids, Language.all, :id, :name %> <br>
-    <% end %>
-
-    <div class="form-group">
       <%= f.submit "Submit Concept!", :class=> "btn btn-primary" %>
     </div>
 

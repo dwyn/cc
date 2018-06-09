@@ -4,11 +4,6 @@
   <strong>Description</strong>
   <p><%= @concept.description %></p>
 
-
-  <strong>Resource Links</strong> <br>
-  <p> @concept.resource_links </p>
-
-
 <div class="col-12 text-center">
   <%= link_to "Edit Concept", edit_concept_path(@concept), class: "col-2 btn btn-info"  %>
   <%= link_to 'Delete Concept', concept_path(@concept), method: :delete, data: {confirm: 'Are you sure you want to delete this?'},class: 'btn btn-danger col-2' %>
