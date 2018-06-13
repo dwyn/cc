@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :concepts
   has_many :sections, through: :concepts
+  accepts_nested_attributes_for :concepts, allow_destroy: true
 
   devise :database_authenticatable, :registerable, 
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: %i[github]
@@ -18,9 +19,6 @@ class User < ApplicationRecord
       user.name = auth.info.name   # assuming the user model has a name
       user.save!
     end
-  end
+  end 
 
-  def rails_section
-    concepts.where("section = 2")
-  end
 end

@@ -7,4 +7,8 @@ class Concept < ApplicationRecord
   validates :description, presence: true
 
   accepts_nested_attributes_for :sections
+
+  def self.which_section
+    self.all.where("section_id")
+  end
 end

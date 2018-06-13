@@ -17,9 +17,7 @@ class ConceptsController < ApplicationController
   end
 
   def create
-    # raise params.inspect
     @concept = current_user.concepts.build(concept_params)
-    # binding.pry
     if @concept.save
       
       flash[:notice] = "Thank you for your submission!"
@@ -52,25 +50,26 @@ class ConceptsController < ApplicationController
   def destroy
     binding.pry
     @concept = Concept.find(params[:id])
-    if @concept.destroy
-      flash[:notice] = "Concept deletion successful"
-      redirect_to user_path(current_user)
-    else
-      flash[:notice] = "Concept could not be deleted at this time!"
-      render :show
-    end
+    @concept.destroy
+    flash[:notice] = "Concept deletion successful"
+    redirect_to user_path(current_user)
+    # if @concept.destroy
+    #   flash[:notice] = "Concept deletion successful"
+    #   redirect_to user_path(current_user)
+    # else
+    #   flash[:notice] = "Concept could not be deleted at this time!"
+    #   render :show
+    # end
   end
 
   private
 
   def concept_params
     params.require(:concept).permit(
-      :id,
       :title,
       :description,
       :resource_links,
-      :section_ids => [],
-      :sections_attributes => [:language_ids => []]
+      :section_ids => []
       )
   end
 
