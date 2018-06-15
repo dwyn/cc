@@ -21,4 +21,35 @@ class User < ApplicationRecord
     end
   end 
 
+
+  def self.favorite_section
+    favorite_section = []
+    cli = []
+    rails = []
+    rails_jquery = []
+    react_redux = []
+    sinatra = []
+
+    self.concepts.each do |concept|
+      if concept.section_id == 1
+        cli.push(concept)
+      elsif
+        rails.push(concept)
+      elsif
+        rails_jquery.push(concept)
+      elsif
+        react_redux.push(concept)
+      elsif
+        sinatra.push(concept)
+      end
+    end
+
+    favorite_section.push(
+      cli.count,
+      rails.count,
+      rails_jquery.count,
+      react_redux.count,
+      sinatra.count
+      )
+  end
 end
