@@ -73,11 +73,15 @@ Concept.create!(
   description: 'Come on! Everyone knows Tic Tac Toe!',
   resource_links: 'www.dwyn.nyc', 
   user_id: 1,
+  # Id like to seed a concept that belongs to several sections
+  # section_id: 1
 )
 
 Concept.create!(
   title: 'Fibonacci Sequence',
   description: 'Enter a number and have the program generate the Fibonacci sequence to that number or to the Nth number',
   resource_links: 'www.dwyn.nyc',
-  user_id: 1
+  user_id: 1,
+  # Id like to seed a concept that belongs to several sections
+  # section_id: 1, 2, 3
 )
