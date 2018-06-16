@@ -4,5 +4,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @concepts = @user.concepts
   end
+
+  def favorites
+    @favorites = current_user.favorite_concepts
+  end
   
 end

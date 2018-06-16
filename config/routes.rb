@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   resources :users, only: [:show] do
     resources :concepts
   end
+
+  get 'favorites', to: 'users#favorites'
 end
