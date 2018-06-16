@@ -2,6 +2,6 @@
 
 <ul>
   <% @favorites.each do |favorite_concept| %>
-    <li><%= link_to favorite_concept.title, item_path(favorite_concept) %></li>
+    <li><%= link_to favorite_concept.title, concept_path(favorite_concept) %></li>
   <% end %>
 </ul>

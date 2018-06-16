@@ -68,8 +68,7 @@ class ConceptsController < ApplicationController
     params.require(:concept).permit(
       :title,
       :description,
-      :resource_links,
-      :section_ids => []
+      :favorited
       )
   end
 

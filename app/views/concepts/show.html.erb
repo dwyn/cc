@@ -2,6 +2,8 @@
 
   <strong>Description</strong>
   <p><%= @concept.description %></p>
+  <p><%= @concept.favorited %></p>
+
 
 <div class="col-12 text-center">
   <%= button_to "Edit Concept", edit_concept_path(@concept), class: "col-2 btn btn-info"  %>

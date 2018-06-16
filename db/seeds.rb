@@ -9,8 +9,8 @@
 
 u = User.new(
   display_name: "D W A Y N E!",
-  email: "dwayne@gmail.com", 
-  encrypted_password: "$2a$10$5eoHh6M2q4GjGkHClO.NqebWWhS94D8rNj5Ot6CB2qrbn7IrTfkSa", 
+  email: "admin@gmail.com", 
+  encrypted_password: "$2a$11$wCPKEDRiT8YIibTfBYB.ReMjtr1FPrOzVSWFp8A0xl/hsFv0vCpA2",
   reset_password_token: nil, 
   reset_password_sent_at: nil, 
   remember_created_at: nil, 
