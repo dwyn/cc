@@ -13,6 +13,11 @@
     </div>
 
     <div class="form-group">
+      <%= f.label :favorited, "Do you love this idea? Save it for later!" %> <br>
+      <%= f.check_box :favorited%>
+    </div>
+
+    <div class="form-group">
       <%= f.submit "Submit Concept!", :class=> "btn btn-primary" %>
     </div>
 
