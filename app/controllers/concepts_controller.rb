@@ -13,11 +13,12 @@ class ConceptsController < ApplicationController
 
   def new
     @concept = Concept.new
-    # @sections = Section.all
+    @concept.comments.build
   end
 
   def create
     @concept = current_user.concepts.build(concept_params)
+    binding.pry
     if @concept.save
       
       flash[:notice] = "Thank you for your submission!"
@@ -53,13 +54,6 @@ class ConceptsController < ApplicationController
     @concept.destroy
     flash[:notice] = "Concept deletion successful"
     redirect_to user_path(current_user)
-    # if @concept.destroy
-    #   flash[:notice] = "Concept deletion successful"
-    #   redirect_to user_path(current_user)
-    # else
-    #   flash[:notice] = "Concept could not be deleted at this time!"
-    #   render :show
-    # end
   end
 
   private
@@ -68,7 +62,9 @@ class ConceptsController < ApplicationController
     params.require(:concept).permit(
       :title,
       :description,
-      :favorited
+      :favorited,
+      :user_id,
+      comment_ids:[]
       )
   end
 

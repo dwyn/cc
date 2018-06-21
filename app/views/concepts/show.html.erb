@@ -9,3 +9,16 @@
   <%= button_to "Edit Concept", edit_concept_path(@concept), class: "col-2 btn btn-info"  %>
   <%= button_to "delete", @concept, :method => :delete %>
 </div>
+
+
+Leave a comment!
+
+
+<%= form_for @concept do |f| %>
+  <%= f.fields_for :comments do |comment| %>
+    <%= comment.label :user_entry %>
+    <%= comment.text_field :user_entry %><br>
+  <% end %>
+
+  <%= f.submit %>
+<% end %>

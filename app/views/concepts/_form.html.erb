@@ -17,6 +17,14 @@
       <%= f.check_box :favorited%>
     </div>
 
+    <%= f.fields_for :comments, @concept.comments do |comment| %>
+
+        <div class="form-group">
+          <%= comment.label :name, 'Leave a comment!' %>
+          <%= comment.text_field :user_entry %>
+        </div>
+    <% end %>
+
     <div class="form-group">
       <%= f.submit "Submit Concept!", :class=> "btn btn-primary" %>
     </div>
