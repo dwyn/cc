@@ -1,6 +1,5 @@
 class User < ApplicationRecord
   has_many :concepts
-  has_many :comments, through: :concepts
   has_many :sections, through: :concepts
 
   accepts_nested_attributes_for :concepts, allow_destroy: true

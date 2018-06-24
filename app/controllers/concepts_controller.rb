@@ -13,7 +13,6 @@ class ConceptsController < ApplicationController
 
   def new
     @concept = Concept.new
-    @concept.comments.build
   end
 
   def create
@@ -31,6 +30,7 @@ class ConceptsController < ApplicationController
 
   def show
     @concept = Concept.find(params[:id])
+    @concept.comments.build
   end
 
   def edit
@@ -64,7 +64,10 @@ class ConceptsController < ApplicationController
       :description,
       :favorited,
       :user_id,
-      comment_ids:[]
+      comment_ids:[],
+      comments_attributes: [
+      :user_entry
+      ]
       )
   end
 

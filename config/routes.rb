@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
 
   resources :concepts do
-    resources :sections
+    resources :comments
   end
 
   resources :users, only: [:show] do
