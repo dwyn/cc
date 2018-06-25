@@ -9,7 +9,6 @@
 
 u = User.new(
   display_name: "D W A Y N E!",
-  name: "dwayne",
   admin: true,
   email: "admin@gmail.com", 
   encrypted_password: "$2a$11$wCPKEDRiT8YIibTfBYB.ReMjtr1FPrOzVSWFp8A0xl/hsFv0vCpA2",
@@ -48,36 +47,36 @@ Language.create!(
 Section.create!(
   title: 'CLI Gem',
   description: 'Utilizing Object Oriented Programming to build and Publish a Ruby Gem.',
-  id: 1,
-  user_id: [1]
+  id: 1
+  # user_id:
 )
 
 Section.create!(
   title: 'Rails',
   description: 'Build a fully functioning web app using the Rails framework',
-  id: 2,
-  user_id: [1]
+  id: 2
+  # user_id:
 )
 
 Section.create!(
   title: 'Rails App with a jQuery Front End',
   description: 'Style Rails web app using JQuery',
-  id: 3,
-  user_id: [1, 2, 3]
+  id: 3
+  # user_id:
 )
 
 Section.create!(
   title: 'React Redux Portfolio Project',
   description: 'Build a beautiful React + Redux project!',
-  id: 4,
-  user_id: [1]
+  id: 4
+  # user_id:
 )
 
 Section.create!(
   title: 'Sinatra',
   description: 'Build a fully functioning web app using the Sinatra framework',
-  id: 5,
-  user_id: [1, 2, 3]
+  id: 5
+  # user_id:
 )
 
 Concept.create!(
