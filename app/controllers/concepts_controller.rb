@@ -17,7 +17,7 @@ class ConceptsController < ApplicationController
 
   def create
     @concept = current_user.concepts.build(concept_params)
-    binding.pry
+    # binding.pry
     if @concept.save
       
       flash[:notice] = "Thank you for your submission!"
@@ -30,7 +30,6 @@ class ConceptsController < ApplicationController
 
   def show
     @concept = Concept.find(params[:id])
-    @concept.comments.build
   end
 
   def edit

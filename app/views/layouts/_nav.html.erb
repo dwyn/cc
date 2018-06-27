@@ -10,6 +10,10 @@
           <%= link_to "Profile", user_path(current_user), class: "nav-link" %>
         </li>
         <li class="nav-item active">
+          <%= binding.pry  %>
+          <%= link_to "Your Concepts", user_concepts_path(current_user), class: "nav-link" %>
+        </li>
+        <li class="nav-item active">
           <%= link_to "Favorite Concepts", favorites_path, class: 'nav-link' %>
         </li>
         <li class="nav-item active">
