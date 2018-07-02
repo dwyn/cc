@@ -10,14 +10,15 @@
           <%= link_to "Profile", user_path(current_user), class: "nav-link" %>
         </li>
         <li class="nav-item active">
-          <%= binding.pry  %>
+          <%#= binding.pry  %>
           <%= link_to "Your Concepts", user_concepts_path(current_user), class: "nav-link" %>
         </li>
         <li class="nav-item active">
           <%= link_to "Favorite Concepts", favorites_path, class: 'nav-link' %>
         </li>
         <li class="nav-item active">
-          <%= link_to "New Concept", new_concept_path, class: "nav-link" %>
+        <%#=binding.pry%>
+          <%= link_to "New Concept", new_user_concept_path(current_user.id), class: "nav-link" %>
         </li>
         <li class="nav-item active">
           <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "nav-link" %>

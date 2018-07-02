@@ -2,26 +2,20 @@ class ConceptsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update, :destroy]
 
   def index
-    if params[:user_id]
-      @concepts = User.find(params[:user_id]).concepts
-    else
-      @concepts = Concept.all
-    end
-    
-    redirect_to root_path
+    @user = User.find(current_user.id)
   end
 
   def new
+    @user = User.find(current_user.id)
     @concept = Concept.new
   end
 
   def create
     @concept = current_user.concepts.build(concept_params)
-    # binding.pry
     if @concept.save
       
       flash[:notice] = "Thank you for your submission!"
-      redirect_to @concept #<--- CHECK REDIRECT 
+      redirect_to root_path #user_concept_path(@concept) #<--- CHECK REDIRECT 
     else
       flash[:alert] = "Unfortunately your concept was not saved."
       render :new
@@ -48,11 +42,10 @@ class ConceptsController < ApplicationController
   end
 
   def destroy
-    binding.pry
     @concept = Concept.find(params[:id])
     @concept.destroy
     flash[:notice] = "Concept deletion successful"
-    redirect_to user_path(current_user)
+    # redirect_to user_path(current_user)
   end
 
   private
@@ -63,10 +56,6 @@ class ConceptsController < ApplicationController
       :description,
       :favorited,
       :user_id,
-      comment_ids:[],
-      comments_attributes: [
-      :user_entry
-      ]
       )
   end
 

@@ -1,11 +1,1 @@
-<h1> USER PROFILE! </h1>
-
-<h1> USER CONCEPTS! </h1>
-
-<% if @concepts != [] %>
-  <% @concepts.each do |concept| %>
-    <div><%= link_to concept.title, user_concept_path(concept.user)  %></div>
-  <% end %>
-<% else %>
-  <div><h3> You have not submitted a concept yet. </h3></div>
-<% end %>
+<h1><%= @user.display_name %>'s Profile! </h1>

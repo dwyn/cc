@@ -1,1 +1,3 @@
-Test!
+<% @user.concepts.each do |concept| %>
+   <h4> <%= concept.title %> </h4>
+<% end %>
