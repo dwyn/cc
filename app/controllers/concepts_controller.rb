@@ -23,6 +23,7 @@ class ConceptsController < ApplicationController
   end
 
   def show
+    @user = current_user
     @concept = Concept.find(params[:id])
   end
 
@@ -47,7 +48,7 @@ class ConceptsController < ApplicationController
     @concept = Concept.find(params[:id])
     @concept.destroy
     flash[:notice] = "Concept deletion successful"
-    # redirect_to user_path(current_user)
+    redirect_to user_concepts_path(current_user)
   end
 
   private
