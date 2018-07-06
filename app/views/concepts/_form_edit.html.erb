@@ -1,27 +1,17 @@
-<div class="concept-form">
+<h3> Edit Your Concept</h3>
+<%= form_for @concept, url: user_concept_path(@user) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <br>
 
-  <h1 class= "text-center">Edit Your Concept</h1><br>
+  <%= f.label :description, "Edit your Concept's description:" %> <br>
+  <%= f.text_area :description, class: "form-control col-9" %>
+  <br>
 
-  <%= form_for @concept do |f| %>
-    <div class="field row">
-      <%= f.label :title, class: "h4 col-2 col-form-label"%>
-      <%= f.text_field :title, class: "col-10 form-control" %>
-    </div>
-    <br>
+  <%= f.label :favorited, "Do you love your new concept? Save it for later!" %>
+  <%= f.check_box :favorited%>
+  
+  <br>
+  <%= f.submit "Submit Your Edits", :class=> "btn btn-primary" %>
+<% end %>
 
-    <div class="field row">
-      <%= f.label :description, "Edit your Concept's description:" %> <br>
-      <%= f.text_area :description, class: "form-control col-9" %>
-    </div>
-    <br>
-
-    <div class="form-group">
-      <%= f.label :favorited, "Do you love your new concept? Save it for later!" %>
-      <%= f.check_box :favorited%>
-    </div>
-    
-    <%= f.submit "Submit Your Edits", :class=> "btn btn-primary" %>
-
-  <% end %>
-
-</div>
