@@ -23,9 +23,9 @@ class User < ApplicationRecord
   end 
 
   # scope :favorited, -> { where(favorited: true) }
-  def favorite_concepts
-    self.concepts.where("favorited = true")
-  end
+  # def favorite_concepts
+  #   self.concepts.where("favorited = true")
+  # end
 
 
   def favorite_section

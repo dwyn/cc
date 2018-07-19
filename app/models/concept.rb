@@ -5,4 +5,6 @@ class Concept < ApplicationRecord
 
   validates :title, presence: true
   validates :description, presence: true
+
+  scope :favorited, -> { where(favorited: true) }
 end

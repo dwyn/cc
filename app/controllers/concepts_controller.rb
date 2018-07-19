@@ -6,8 +6,12 @@ class ConceptsController < ApplicationController
   end
 
   def new
-    @user = User.find(current_user.id)
+    @user = current_user
     @concept = Concept.new
+  end
+
+  def favorites
+    @favorite_concepts = Concept.favorited
   end
 
   def create

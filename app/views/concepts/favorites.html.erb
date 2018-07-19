@@ -1,0 +1,7 @@
+<h1>Favorited Concepts!</h1>
+
+<ul>
+  <% @favorite_concepts.each do |favorite_concept| %>
+    <li><%= link_to favorite_concept.title, user_concept_path(current_user, favorite_concept) %></li>
+  <% end %>
+</ul>
