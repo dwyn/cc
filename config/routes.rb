@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   root to: 'welcome#index'
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
 
-  # get 'favorites', to: 'users#favorites'
   get 'favorites', to: 'concepts#favorites'
 
   resources :users, only: [:show] do

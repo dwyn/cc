@@ -3,9 +3,9 @@ class CreateConcepts < ActiveRecord::Migration[5.0]
     create_table :concepts do |t|
       t.string :title
       t.string :description
-      t.string :resource_links
       t.integer :user_id
-      t.boolean :submitted
+      t.integer :section_id
+      t.boolean :favorited
 
       t.timestamps
     end

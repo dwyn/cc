@@ -1,6 +1,7 @@
 class Concept < ApplicationRecord
   belongs_to :user
-  has_many :sections
+  belongs_to :sections
+  # has_many :sections
   has_many :languages, through: :sections
 
   validates :title, presence: true

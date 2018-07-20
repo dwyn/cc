@@ -17,6 +17,7 @@ class ConceptsController < ApplicationController
   def create
     @user = User.find_by_id(params[:user_id])
     @concept = current_user.concepts.build(concept_params)
+    # binding.pry
     if @concept.save
       flash[:notice] = "Thank you for your submission!"
       redirect_to user_concept_path(current_user, @concept) #<--- CHECK REDIRECT 
@@ -63,6 +64,7 @@ class ConceptsController < ApplicationController
       :description,
       :favorited,
       :user_id,
+      :section_id
       )
   end
 end
