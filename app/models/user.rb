@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_many :concepts
-  has_many :sections, through: :concepts
+  has_many :sections, through: :concepts#,source: :sections
 
   devise :database_authenticatable, :registerable, 
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: %i[github]
