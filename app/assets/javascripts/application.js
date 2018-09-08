@@ -11,17 +11,9 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
-
-document.addEventListener("turbolinks:load", function() {
-    if ($('li.active').html() != undefined) {
-        $('li.active').removeClass('active');
-    }
-    $('a[href="' + location.pathname + '"]').parent('li').addClass('active');
-});

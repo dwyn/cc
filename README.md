@@ -1,25 +1,21 @@
 # Concept Community
-In its infancy, Cocnept Community is a place for Flatiron Students and Faculty to submit ideas (read: concepts) for future students to build for portfolio projects. Specifically speaking when students can't think of something to build for a portfolio project.
+In its infancy, Concept Community is a place for Flatiron Students and Faculty to submit ideas (read: concepts) for future students to build for portfolio projects. Specifically speaking when students can't think of something to build for a portfolio project.
 
 ## Motivation
-At The Flatiron School, portfolio projects are a great way to demonstrate a how well students grasp concepts taught throughout the curriculum. One of the hardest parts of every portfolio project is knowing *what* to build! Enter Concept Commununity! Current Flatiron students and faculty can log into Concept Community, and submit ideas for future students to build for portofolio projects.  
+At The Flatiron School, portfolio projects are a great way to demonstrate a how well students grasp concepts taught throughout the curriculum. One of the hardest parts of every portfolio project is knowing *what* to build! Enter Concept Community! Current Flatiron students and faculty can log into Concept Community, and submit app ideas for future students to build for portfolio projects.  
 
 <!-- ## Build status -->
-<!-- Build status of continus integration i.e. travis, appveyor etc. Ex. -  -->
+<!-- Build status of continuous integration i.e. travis, appveyor etc. Ex. -  -->
 
 <!-- [![Build Status](https://travis-ci.org/akashnimare/foco.svg?branch=master)](https://travis-ci.org/akashnimare/foco) -->
 <!-- [![Windows Build Status](https://ci.appveyor.com/api/projects/status/github/akashnimare/foco?branch=master&svg=true)](https://ci.appveyor.com/project/akashnimare/foco/branch/master) -->
 
-<!-- ## Code style -->
-<!-- If you're using any code style like xo, standard etc. That will help others while contributing to your project. Ex. - -->
-
-<!-- [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard) -->
- 
 <!-- ## Screenshots -->
 <!-- Include logo/demo screenshot etc. -->
 ## Getting Started
 After cloning the repository you will need to run a few commands in terminal:
-1. All dependencies are in the Gemfile. Run `bundle install` from the commandline to install.
+1. Head to the Gemfile to check out the dependencies.
+   Run `bundle install` from the command line to install.
 2. `rake db:create`
 3. `rake db:migrate`
 4. `rake db:seed`
@@ -57,8 +53,8 @@ Give proper credits. This could be a link to any repo which inspired you to buil
 #### Anything else that seems useful -->
 
 ## Authors
-* **Dwayne Harmon** - *Initial work* - [dwyn](https://github.com/dwyn)
-See also the list of [contributors](https://github.com/dwyn/cc/contributors) who participated in this project.
+* **Dwayne Harmon** - *Initial work* - [Dwayne Harmon](https://github.com/dwyn)
+See also the list of [contributors](https://github.com/dwyn/conceptcommunity/contributors) who participated in this project.
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
