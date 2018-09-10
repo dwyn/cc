@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get 'favorites', to: 'concepts#favorites'
   get '/welcome/random_concept' => 'welcome#random_concept'
+  get '/user_concepts', to: 'concepts#index'
 
   resources :users, only: [:show] do
     resources :concepts
