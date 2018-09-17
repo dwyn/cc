@@ -9,12 +9,11 @@ class Concept {
   }
 }
 
-$(function() {
-  //Once document is ready ie page is loaded...
-  $.get(`${window.location.href}.json`, function(data) {
-    // HTTP GET request for some JSON. Upon success do...
+$(function() { //Once document is ready ie page is loaded...
+  $.get(`${window.location.href}.json`, function(data) { // HTTP GET request for some JSON. Upon success do...
     $('.result').html(data);
     {
+      let $userConcepts = $('.userConcepts');
       data.forEach(concept => {
         current_concept = new Concept(
           concept.id,
@@ -24,19 +23,14 @@ $(function() {
           concept.section_id,
           concept.favorited
         );
-        let concept_div = $('<div></div>');
-        concept_div.addClass('userConcept');
-        
-        let concept_link = $('<a></a>');
-        let url = `users/${current_concept.user_id}/concepts/${current_concept.id}`;
-        debugger
+
+        let concept_link = $('<a></a> <br>');
+        let url = `users/${concept.user_id}/concepts/${current_concept.id}`;
+
         concept_link.attr('href', url);
         concept_link.html(current_concept.title);
-        concept_div.append(concept_link);
-        $('.userConcepts').append(concept_div);
+        $userConcepts.append(concept_link);
       });
     }
   });
 });
-
-
