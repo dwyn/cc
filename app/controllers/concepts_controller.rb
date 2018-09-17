@@ -3,9 +3,12 @@ class ConceptsController < ApplicationController
 
   def index
     @user = User.find(current_user.id)
-    # respond_to :html, :json
-    # render json: @user.to_json(only: [:name],
-    # include: [concepts: { only: [:title, :description]}])
+    @concepts = @user.concepts
+
+    respond_to do |format|
+      format.html {render :index}
+      format.json {render json: @concepts}
+    end
   end
 
   def new
