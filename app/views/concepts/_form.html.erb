@@ -1,20 +1,23 @@
-<h1 class= "text-center">New Concept</h1><br>
+<h2 class= "text-center">New Concept </h2><br>
+<div class= "text-center">
+  <%= form_for [@user, @concept] do |f| %>
+    <p>
+      <%= f.label :title %><br>
+      <%= f.text_field :title %>
+    </p>
+    <br>
 
-<%= form_for [@user, @concept] do |f| %>
-   
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <br>
+    <p>
+      <%= f.label :description, "Tell us about your app idea!" %><br>
+      <%= f.text_area :description%>
+    </p>
 
-  <%= f.label :description, "Tell us about your app idea!" %> 
-  <%= f.text_area :description%>
-  <br>
+    <p>
+      <%= f.label :favorited, "Love your idea? Save it for later!" %>
+      <%= f.check_box :favorited%>
+    </p>
 
-  <%= f.label :favorited, "Do you love your new concept? Save it for later!" %>
-  <%= f.check_box :favorited%>
-  <br>
+    <%= f.submit "Submit Concept!", :class=> "btn btn-primary" %>
 
-  <%= f.submit "Submit Concept!", :class=> "btn btn-primary" %>
-
-<% end %>
-
+  <% end %>
+</div>

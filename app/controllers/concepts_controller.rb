@@ -21,12 +21,13 @@ class ConceptsController < ApplicationController
   end
 
   def create
-    binding.pry
     @user = User.find_by_id(params[:user_id])
     @concept = @user.concepts.build(concept_params)
+    
     if @concept.save
+      render partial: "concepts/show"
+      # render "concepts/show", :layout => false
       flash[:notice] = "Thank you for your submission!"
-      redirect_to user_concept_path(@user, @concept) #<--- CHECK REDIRECT 
     else
       flash[:alert] = "Unfortunately your concept was not saved."
       render :new
