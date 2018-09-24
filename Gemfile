@@ -22,10 +22,9 @@ gem 'coffee-rails', '~> 4.2'
 gem 'therubyracer', platforms: :ruby
 
 gem 'jquery-rails'
-# gem 'turbolinks', '~> 5' // will reinstall later. // = require turbolinks
+# gem 'turbolinks', '~> 5' // may* reinstall later. // = require turbolinks
 gem 'jbuilder', '~> 2.5'
 gem 'active_model_serializers'
-gem "therubyracer"
 gem "less-rails"
 gem "twitter-bootstrap-rails"
 

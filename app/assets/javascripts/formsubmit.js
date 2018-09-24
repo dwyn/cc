@@ -1,15 +1,17 @@
+// document.addEventListener("DOMContentLoaded", function () {
+//   // Handler when the DOM is fully loaded
+// });
+
 $(function(){
   $("#new_concept").on("submit", function (e) { // 1. Handle submit event
     e.preventDefault();
-    debugger
-    // url = e.target.action
     url = this.action
-
     params = { // 2. Structure parameters to be sent in the request 
       concept: {
         title: document.querySelector("#concept_title").value }
         // authenticity_token: document.querySelector("input[name=authenticity_token]")
     }
+    debugger
     fetch(url, { // 3. Submit post request
       method: "POST", 
       credentials: "same-origin",
