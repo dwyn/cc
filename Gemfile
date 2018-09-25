@@ -19,14 +19,9 @@ gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
-gem 'therubyracer', platforms: :ruby
-
 gem 'jquery-rails'
-# gem 'turbolinks', '~> 5' // may* reinstall later. // = require turbolinks
 gem 'jbuilder', '~> 2.5'
 gem 'active_model_serializers'
-gem "less-rails"
-gem "twitter-bootstrap-rails"
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
