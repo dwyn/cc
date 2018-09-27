@@ -14,6 +14,11 @@ class ConceptsController < ApplicationController
   def new
     @user = current_user
     @concept = Concept.new
+    
+    respond_to do |format|
+      format.html {render :index}
+      format.json {render json: @concepts}
+    end
   end
 
   def favorites
@@ -25,7 +30,8 @@ class ConceptsController < ApplicationController
     @concept = @user.concepts.build(concept_params)
     
     if @concept.save
-      render partial: "concepts/show"
+      render json: @concept.to_json(only: [:title, :description])
+      # render partial: "concepts/show"
       # render "concepts/show", :layout => false
       flash[:notice] = "Thank you for your submission!"
     else

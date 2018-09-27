@@ -8,7 +8,15 @@ class UsersController < ApplicationController
   def allconcepts
     @user = User.find(current_user.id)
     @concepts = @user.concepts
-    render template: 'users/allconcepts'
+
+    @three_concepts = []
+    @three_concepts.push(@concepts[0..2])
+    @remaining_concepts = @concepts.drop(3)
+
+    respond_to do |format|
+      format.html {render template: 'users/allconcepts'}
+      format.json {render json: @remaining_concepts}
+    end
   end
 
   def favorites

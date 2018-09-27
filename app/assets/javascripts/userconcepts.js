@@ -26,7 +26,6 @@ $(function() { //Once document is ready ie page is loaded...
 
         let concept_link = $('<a></a> <br>');
         let url = `users/${current_concept.user_id}/concepts/${current_concept.id}`;
-        debugger
         concept_link.attr('href', url);
         concept_link.html(current_concept.title);
         $userConcepts.append(concept_link);

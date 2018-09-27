@@ -1,0 +1,1 @@
+// authenticity_token: document.querySelector("input[name=authenticity_token]")
