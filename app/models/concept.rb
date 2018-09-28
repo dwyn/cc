@@ -6,4 +6,5 @@ class Concept < ApplicationRecord
   validates :description, presence: true
 
   scope :favorited, -> { where(favorited: true) }
+  scope :not_favorited, -> { where(favorited: false) }
 end

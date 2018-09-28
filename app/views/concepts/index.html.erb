@@ -1,7 +1,7 @@
 <div class = "favorite_concepts">
   <h3> Favorite Concepts! </h3>
   <% @favorites.each do |concept| %>
-    <%= link_to "#{concept.title}", user_concept_path(@user, @concept) %><br>
+    <%= link_to "#{concept.title}", user_concept_path(concept.user_id, concept.id) %><br>
   <% end %>
 </div>
 

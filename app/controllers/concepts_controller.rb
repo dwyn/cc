@@ -3,12 +3,12 @@ class ConceptsController < ApplicationController
 
   def index
     @user = User.find(current_user.id)
-    @concepts = @user.concepts
     @favorites = @user.concepts.favorited
+    @remaining_concepts = @user.concepts.not_favorited
 
     respond_to do |format|
       format.html {render :index}
-      format.json {render json: @concepts}
+      format.json {render json: @remaining_concepts}
     end
   end
 
@@ -28,8 +28,6 @@ class ConceptsController < ApplicationController
     
     if @concept.save
       render json: @concept.to_json(only: [:title, :description])
-      # render partial: "concepts/show"
-      # render "concepts/show", :layout => false
       flash[:notice] = "Thank you for your submission!"
     else
       flash[:alert] = "Unfortunately your concept was not saved."
