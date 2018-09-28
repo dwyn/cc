@@ -4,6 +4,7 @@ class ConceptsController < ApplicationController
   def index
     @user = User.find(current_user.id)
     @concepts = @user.concepts
+    @favorites = @user.concepts.favorited
 
     respond_to do |format|
       format.html {render :index}
@@ -14,15 +15,11 @@ class ConceptsController < ApplicationController
   def new
     @user = current_user
     @concept = Concept.new
-    
+
     respond_to do |format|
       format.html {render :index}
       format.json {render json: @concepts}
     end
-  end
-
-  def favorites
-    @favorite_concepts = Concept.favorited
   end
 
   def create

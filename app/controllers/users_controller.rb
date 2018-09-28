@@ -7,11 +7,8 @@ class UsersController < ApplicationController
 
   def allconcepts
     @user = User.find(current_user.id)
-    @concepts = @user.concepts
-
-    @three_concepts = []
-    @three_concepts.push(@concepts[0..2])
-    @remaining_concepts = @concepts.drop(3)
+    @favorites = @user.concepts.favorited
+    @remaining_concepts = 
 
     respond_to do |format|
       format.html {render template: 'users/allconcepts'}
