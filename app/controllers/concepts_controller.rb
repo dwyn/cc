@@ -15,15 +15,10 @@ class ConceptsController < ApplicationController
   def new
     @user = current_user
     @concept = Concept.new
-
-    respond_to do |format|
-      format.html {render :index}
-      format.json {render json: @concepts}
-    end
   end
 
   def create
-    @user = User.find_by_id(params[:user_id])
+    @user = current_user
     @concept = @user.concepts.build(concept_params)
     
     if @concept.save

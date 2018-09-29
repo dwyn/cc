@@ -5,7 +5,8 @@ class WelcomeController < ApplicationController
 
 		respond_to do |format|
       format.html {render :index}
-			format.json {render json: @concept.to_json}
+			format.json {render json: @concept.to_json(only: [:title, :description],
+																			include: [user: { only: [:name]}]) }
     end
 	end
 
