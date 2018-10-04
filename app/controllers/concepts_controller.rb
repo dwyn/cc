@@ -2,7 +2,9 @@ class ConceptsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update, :destroy]
 
   def index
-    @user = User.find(current_user.id)
+    @user = current_user
+    @concept = Concept.new
+
     @favorites = @user.concepts.favorited
     @remaining_concepts = @user.concepts.not_favorited
 
@@ -22,11 +24,15 @@ class ConceptsController < ApplicationController
     @concept = @user.concepts.build(concept_params)
     
     if @concept.save
-      render json: @concept.to_json(only: [:title, :description])
+      respond_to do |format|
+        format.html {render :index}
+        format.json {render json: @concept}
+      end
+
       flash[:notice] = "Thank you for your submission!"
     else
-      flash[:alert] = "Unfortunately your concept was not saved."
       render :new
+      flash[:alert] = "Unfortunately your concept was not saved."
     end
   end
 
@@ -67,7 +73,8 @@ class ConceptsController < ApplicationController
       :description,
       :favorited,
       :user_id,
-      :section_id
+      :section_id,
+      :user => [:id, :name, :email, :name, :display_name]
       )
   end
 end
