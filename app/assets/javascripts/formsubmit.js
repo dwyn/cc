@@ -3,7 +3,7 @@
 // });
 
 $(document).ready(function () {
-  $("#new_concept").on("submit", function(e) { // 1. Handle submit event
+  $("#append_new_concept").on("submit", function(e) { // 1. Handle submit event
     e.preventDefault();
     url = this.action
     params = { // 2. Structure parameters to be sent in the request 
@@ -24,7 +24,9 @@ $(document).ready(function () {
       body: JSON.stringify(params)
     })// 4. How to handle response (check fetch documentation first) 
     .then(response => response.json()) // parses response to JSON
-    .then(someName => {
+    .then(someData => {
+      let url = `/users/${someData.user_id}/concepts/${someData.id}`;
+      document.querySelector(".freshConcept").append(`<a href="${url}"> ${someData.title} </a> <br>`);
       debugger
     })
 

@@ -1,0 +1,19 @@
+<h2 class= "text-center">New Concept </h2><br>
+<div class= "text-center">
+  <%= form_for [@user, @concept], :html => { :id => "append_new_concept" } do |f| %>
+    <p>
+      <%= f.label :title %><br>
+      <%= f.text_field :title %>
+    </p>
+    <p>
+      <%= f.label :description, "Tell us about your app idea!" %><br>
+      <%= f.text_area :description%>
+    </p>
+    <p>
+      <%= f.label :favorited, "Love your idea? Save it for later!" %>
+      <%= f.check_box :favorited%>
+    </p>
+
+    <%= f.submit "Submit Concept!", :class=> "btn btn-primary" %>
+  <% end %>
+</div>
