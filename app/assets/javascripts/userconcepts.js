@@ -29,7 +29,3 @@ $(function() { //Once document is ready ie page is loaded...
     })
   });
 });
-
-
-// $remainingConcepts.append(`${currentConcept.description} <br>`);
-// $remainingConcepts.append(`${currentConcept.favorited} <br>`);

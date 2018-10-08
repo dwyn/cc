@@ -25,9 +25,11 @@ $(document).ready(function () {
     })// 4. How to handle response (check fetch documentation first) 
     .then(response => response.json()) // parses response to JSON
     .then(someData => {
+      let $freshConcept = $('#freshConcept');
       let url = `/users/${someData.user_id}/concepts/${someData.id}`;
-      document.querySelector(".freshConcept").append(`<a href="${url}"> ${someData.title} </a> <br>`);
-      debugger
+      $freshConcept.append(`<a href="${url}"> ${someData.title} </a> <br>`);
+      // document.querySelector(".freshConcept").append(`<a href="${url}"> ${someData.title} </a> <br>`);
+      // debugger
     })
 
   });

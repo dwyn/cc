@@ -1,19 +1,18 @@
-<div class= "text-center">
-  <div class = "favorite_concepts">
-    <h3> Favorite Concepts! </h3>
-    <% @favorites.each do |concept| %>
-      <%= link_to "#{concept.title}", user_concept_path(concept.user_id, concept.id) %><br>
-    <% end %>
-  </div>
-
-    <%= link_to "Remaining Concepts", user_concepts_path(@user, @concept), class: "col-2 center btn btn-info remainingConcepts"  %>
-
-  <div id = "remainingConcepts">
-
-  </div>
-
-  <div class="freshConcept">
-    <%= render "concepts/index" %>
-  </div>
+<div class = "favorite_concepts">
+  <h3> Favorite Concepts! </h3>
+  <% @favorites.each do |concept| %>
+    <%= link_to "#{concept.title}", user_concept_path(concept.user_id, concept.id) %><br>
+  <% end %>
 </div>
 
+  <%= link_to "Remaining Concepts", user_concepts_path(@user, @concept), class: "col-2 center btn btn-info remainingConcepts"  %>
+
+<div id = "remainingConcepts">
+
+</div>
+
+<%= render "concepts/index" %>
+
+<div id="freshConcept">
+  
+</div>
