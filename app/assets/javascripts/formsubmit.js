@@ -22,7 +22,7 @@ $(document).ready(function () {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(params)
-    })// 4. How to handle response (check fetch documentation first) 
+    })// 4. How to handle response 
     .then(response => response.json()) // parses response to JSON
     .then(someData => {
       let $freshConcept = $('#freshConcept');
@@ -31,11 +31,6 @@ $(document).ready(function () {
       // document.querySelector(".freshConcept").append(`<a href="${url}"> ${someData.title} </a> <br>`);
       // debugger
     })
-
+    .catch(error => console.error(`Error: ${error}`))
   });
 });
-
-
-        //  .catch(function(error){
-        //         console.log(error)
-        //     })
