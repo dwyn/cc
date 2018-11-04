@@ -1,15 +1,13 @@
-<br>
-<br>
-
-<div class="row">
-  <div class="container-fluid col-md-8 col-md text-center center-block">
-   <div class="center"> <h3> CONCEPT OF THE DAY! </h3>
-          <br>  
-          <!-- Random Concept -->
-          <h4 class="concept-title"><%= @concept.title %></h4>
-          <h5 class="concept-user">By: <%= @concept.user.name.capitalize %>!</h5>
-          <p class="concept-desc"><%= @concept.description %></p>
-      <%= link_to "Show New Concept", root_path, class: "nextConcept col-4 btn btn-info" %>
+<div class="container">
+	<div class="row">
+    <div class="center-box col-md-10" id="show-table">
+      <h3> CONCEPT OF THE DAY!  </h3>
+      <div class="concept-show">
+        <h4 class="concept-title"><%= @concept.title %></h4>
+        <h5 class="concept-user">By: <%= @concept.user.name.capitalize %>!</h5>
+        <p class="concept-desc"><%= @concept.description %></p>
+        <%= link_to "Show New Concept", root_path, class: "nextConcept col-4 btn btn-info" %>
+      </div>
     </div>
   </div>
 </div>
