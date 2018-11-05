@@ -13,7 +13,7 @@ $(function() { //Once document is ready ie page is loaded...
     e.preventDefault();    //prevent browser from executing default action
     $.getJSON(this.href, function (json) {   // HTTP GET request for some JSON. Upon success do...
       let $remainingConcepts = $('#remainingConcepts');
-      debugger
+
       json.forEach(concept => {
           let currentConcept = new Concept(
           concept.id,

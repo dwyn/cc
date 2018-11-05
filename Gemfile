@@ -7,6 +7,7 @@ gem 'omniauth-github'
 gem 'devise', '~> 4.4.3'
 gem 'bootstrap', '~> 4.0.0'
 gem 'pry-rails'
+gem 'flexbox-rails', '~> 1.1'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
