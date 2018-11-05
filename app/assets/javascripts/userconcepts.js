@@ -25,7 +25,6 @@ $(function() { //Once document is ready ie page is loaded...
           );
           
           let url = `/users/${currentConcept.user_id}/concepts/${currentConcept.id}`;
-          // debugger
           $notFavs.append(`<a href="${url}"> ${currentConcept.title} </a> <br>`)
         });
       } else {

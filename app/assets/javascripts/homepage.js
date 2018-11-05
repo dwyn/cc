@@ -6,9 +6,10 @@ $(function() {   //Once document is ready ie page is loaded...
       let $conceptUser = $('h5.concept-user');   //Capture concepts user
       let $cardDesc = $('p.concept-desc');       //Capture concept description
       
-      $conceptTitle.html(json.data.attributes.title)    //Replace concept title
-      $conceptUser.html(json.data.attributes.user);     //Replace concept user
-      $cardDesc.html(json.data.attributes.description); //Replace concept description
+      $conceptTitle.html(json.title)    //Replace concept title
+      $conceptUser.html(json.user);     //Replace concept user
+      $cardDesc.html(json.description); //Replace concept description
     });
   });
 });
+ 
