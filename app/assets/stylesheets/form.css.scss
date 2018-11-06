@@ -1,0 +1,18 @@
+#newForm {
+  border: 10px;
+  border-color: black;
+  border-radius: 10px;
+  box-shadow: -2px 5px 20px #aaaaaa;
+  display: table;
+  height: 375px;
+  width: 300px;
+  padding: 15px;
+  font-family: "Helvetica Neue Light", Helvetica, sans-serif;
+
+  margin: auto;
+  position: absolute;
+  text-align: center;
+  
+  flex: 1;
+  top: 0; left: 0; bottom:0; right: 0;
+}
