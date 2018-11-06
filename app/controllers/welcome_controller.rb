@@ -1,11 +1,12 @@
 class WelcomeController < ApplicationController
 
 	def index
-		@concept = Concept.all.sample
+		@user = current_user
+		@concept = @user.concepts.sample
 
 		respond_to do |format|
       format.html {render :index}
-			format.json {render json: @concept}
+			format.json {render json: @user}
     end
 	end
 
