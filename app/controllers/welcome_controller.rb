@@ -6,7 +6,7 @@ class WelcomeController < ApplicationController
 
 		respond_to do |format|
       format.html {render :index}
-			format.json {render json: @user}
+			format.json {render json: @concept}
     end
 	end
 

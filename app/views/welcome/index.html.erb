@@ -3,7 +3,7 @@
     <div class="center-box col-md-8" id="show-table">
         <div>
           <h4> <%= link_to "#{@concept.title}", user_concept_path(@concept.user_id, @concept.id),  class:"concept-title" %> </h4>
-          <h5> By: <%= link_to "#{@concept.user.name.capitalize}", user_concepts_path(@user, @concept), class: "concept-user" %>!</h5>
+          <h5> By: <%= link_to "#{@concept.user.name.capitalize}", user_path(@user), class: "concept-user", id: "show-user-concepts" %>!</h5>
         </div>
         <div>
           <p class="concept-desc"><%= @concept.description %></p>
