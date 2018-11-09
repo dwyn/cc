@@ -1,5 +1,5 @@
 $(function() {
-  $('a.remainingConcepts').on('click', function (e) {
+  $('a.remainingConcepts').one('click', function (e) {
     e.preventDefault();
     $.getJSON(this.href, function (json) {
       let $notFavs = $('#notFavs');
