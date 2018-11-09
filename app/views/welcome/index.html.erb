@@ -1,14 +1,17 @@
 <div class="container">
-	<div class="row">
-    <div class="center-box col-md-8" id="show-table">
-        <div>
-          <h4> <%= link_to "#{@concept.title}", user_concept_path(@concept.user_id, @concept.id),  class:"concept-title" %> </h4>
-          <h5> By: <%= link_to "#{@concept.user.name.capitalize}", user_path(@user), class: "concept-user", id: "show-user-concepts" %>!</h5>
-        </div>
-        <div>
-          <p class="concept-desc"><%= @concept.description %></p>
-          <%= link_to "Show New Concept", root_path, class: "nextConcept col-4 btn btn-info", id: "nextConcept" %>
-        </div>
+  <div class="col-md-6" id="show-table">
+    <div class="info">
+      <h4> <%= link_to "#{@concept.title}", user_concept_path(@concept.user_id, @concept.id),  class:"concept-title" %> </h4>
+      <h5> By: <%= link_to "#{@concept.user.name.capitalize}", user_path(@user), class: "concept-user", id: "show-user-concepts" %>!</h5>
+      <p class="concept-desc"><%= @concept.description %></p>
+      <%= link_to "Show New Concept", root_path, class: "nextConcept my-button" %>
     </div>
+
+    <div id="button">
+    </div>
+  </div>
+
+  <div class="col-md-3" id="user-concepts-show-table">
+    Messenger bag activated charcoal mumblecore scenester, knausgaard vinyl trust fund leggings kinfolk flannel yuccie succulents dreamcatcher cornhole raw denim. Offal biodiesel fingerstache aesthetic. Hexagon put a bird on it sustainable hoodie, chicharrones distillery mixtape prism pabst cred. Poutine tattooed meggings neutra semiotics taxidermy umami wayfarers.
   </div>
 </div>

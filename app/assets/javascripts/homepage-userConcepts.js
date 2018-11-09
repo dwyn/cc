@@ -14,7 +14,8 @@ $(function () {
         }
         return 0;
       });
-      debugger
+
+      
     });
   });
 });

@@ -1,5 +1,4 @@
 require_relative 'boot'
-
 require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
@@ -13,3 +12,6 @@ module ConceptCommunity
     # -- all .rb files in that directory are automatically loaded.
   end
 end
+
+config.assets.paths << Rails.root.join('vendor', 'assets', 'fonts')
+config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/

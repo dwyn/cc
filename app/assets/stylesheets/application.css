@@ -5,4 +5,10 @@
  *= require_self
  *= require_tree .
  //= require 'flexbox'
+
 */
+
+.body {
+  font-family: 'Helvetica Neue Light', Helvetica, sans-serif;
+  font-size: 2.5em;
+}
