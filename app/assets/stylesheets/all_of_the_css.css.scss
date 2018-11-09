@@ -1,0 +1,162 @@
+// NAVBAR!
+.navbar {
+  margin-bottom: 60px;
+}
+
+// BODY!
+body {
+  font-family: 'Helvetica Neue Light', Helvetica, sans-serif;
+}
+
+
+.container {
+  display: flex;
+  min-height: 40vh;
+}
+
+#show-table {
+  border: .5px solid;
+  border-color: #100431;
+  border-radius: 10px;
+  box-shadow: -2px 3px 30px #aaaaaa;
+  margin-right: 3px;
+  padding: 30px;
+  text-align: center;
+  height: 400px;
+  order: 0;
+}
+
+.concept-desc {
+  margin-top: 20px;
+  height: 100px;
+  max-height: 100px;
+}
+
+#user-concepts-show-table {
+  border: .5px solid;
+  border-color: #100431;
+  border-radius: 10px;
+  box-shadow: -2px 3px 30px #aaaaaa;
+  margin-left: 3px;
+  padding: 20px;
+  display: none;
+  height: 400px;
+  order: 1;
+}
+
+// User Concepts
+#freshConcept {
+  border: 2px;
+  border-color: black;
+  border-radius: 3px;
+  box-shadow: -2px 5px 20px #aaaaaa;
+  display: table;
+  height: 300px;
+  padding: 15px;
+  margin-top: 40px;
+  width: 45%;
+}
+
+// Users
+.container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#favs {
+  border: 2px;
+  border-color: black;
+  border-radius: 3px;
+  box-shadow: -2px 5px 20px #aaaaaa;
+  display: table;
+  height: 300px;
+  margin-top: 40px;
+  padding: 15px;
+  width: 45%;
+}
+
+.notFavs {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+// FORMS!
+#newForm {
+  border: 10px;
+  border-color: black;
+  border-radius: 10px;
+  box-shadow: -2px 5px 20px #aaaaaa;
+  display: table;
+  height: 375px;
+  width: 300px;
+  padding: 15px;
+  font-family: "Helvetica Neue Light", Helvetica, sans-serif;
+
+  margin: auto;
+  position: absolute;
+  text-align: center;
+  
+  flex: 1;
+  top: 0; left: 0; bottom:0; right: 0;
+}
+
+// BUTTON STUFF
+.my-edit-button {
+  background-color: #2EACD2;
+  transition: background-color 0.35s ease;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  box-shadow: -2px 5px 20px #aaaaaa;
+  border-radius: 20px;
+  width: 175px;
+  cursor: pointer;
+}
+
+.my-delete-button {
+  background-color: #DC3545;
+  transition: background-color 0.35s ease;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  box-shadow: -2px 5px 20px #aaaaaa;
+  border-radius: 20px;
+  width: 175px; 
+  cursor: pointer;
+}
+
+.my-button {
+    background-color: #100431;
+    transition: background-color 0.35s ease;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    box-shadow: -2px 5px 20px #aaaaaa;
+    border-radius: 20px;
+    cursor: pointer;
+
+    position: relative;
+    
+    top: 65px;
+}
+
+.my-button:hover {
+  background-color: white;
+  color: #100431;
+  text-decoration: none;
+}

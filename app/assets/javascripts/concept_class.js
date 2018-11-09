@@ -1,4 +1,4 @@
-function Concept(attributes) {
+class Concept {
   constructor(id, title, description, user_id, favorited) {
     this.id = id;
     this.title = title;

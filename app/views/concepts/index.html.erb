@@ -5,11 +5,9 @@
       <%= link_to "#{concept.title}", user_concept_path(concept.user_id, concept.id) %><br>
     <% end %>
     <%= link_to "Unfavorited", user_concepts_path(@user, @concept), class: "col-5 center btn btn-info remainingConcepts notFavs"  %>
-  <div id="notFavs">
+    <div id="notFavs">
+    </div>
   </div>
-  </div>
-
-  
 
   <div id="freshConcept">
     <%= render "concepts/index" %>

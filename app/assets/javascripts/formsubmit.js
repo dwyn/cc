@@ -25,11 +25,10 @@ $(document).ready(function () {
       let $favs = $('#favs');
       let $notFavs = $('#notFavs')
       let url = `/users/${someData.user_id}/concepts/${someData.id}`;
-        debugger
       if (someData.favorited === true) {
-        $favs.append(`<a href="${url}"> ${someData.title} </a> <br>`);
+        $favs.prepend(`<a href="${url}"> ${someData.title} </a> <br>`);
       } else {
-        $notFavs.append(`<a href="${url}"> ${someData.title} </a> <br>`);
+        $notFavs.prepend(`<a href="${url}"> ${someData.title} </a> <br>`);
       }
     })
     .catch(error => console.error(`Error: ${error}`))
