@@ -44,6 +44,29 @@ body {
   order: 1;
 }
 
+#show-concepts-list-table { //User concepts page
+  border: .5px solid;
+  border-color: #100431;
+  border-radius: 10px;
+  box-shadow: -2px 3px 30px #aaaaaa;
+  margin-right: 3px;
+  padding: 30px;
+  text-align: center;
+  order: 0;
+}
+
+#freshConcept {
+  border: .5px solid;
+  border-color: #100431;
+  border-radius: 10px;
+  box-shadow: -2px 3px 30px #aaaaaa;
+  margin-left: 3px;
+  padding: 20px;
+  display: none;
+  height: 400px;
+  order: 1;
+}
+
 // User Concepts
 #freshConcept {
   border: 2px;
