@@ -23,6 +23,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'active_model_serializers'
+gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
