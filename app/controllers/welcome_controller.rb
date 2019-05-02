@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
 
 	def index
-		@user = current_user
+		@user = User.all[0]
 		@concept = @user.concepts.sample
 
 		respond_to do |format|

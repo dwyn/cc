@@ -3,7 +3,7 @@ $(document).ready(function () {
     e.preventDefault();
     url = this.action
     params = { 
-      concept: {
+      concept: { 
         title: document.querySelector("#concept_title").value,
         description: document.querySelector("#concept_description").value,
         favorited: document.querySelector("#concept_favorited").value,

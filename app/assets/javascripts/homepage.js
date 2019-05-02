@@ -5,7 +5,7 @@ $(function() {   //Once document is ready ie page is loaded...
       let $conceptTitle = $('a.concept-title'); //Capture concept title
       let $conceptUser = $('a.concept-user');   //Capture concepts user
       let $cardDesc = $('p.concept-desc');       //Capture concept description
-
+      debugger;
       $conceptTitle.html(json.title);    //Replace concept title
       $conceptUser.html(json.user.name); //Replace concept user
       $cardDesc.html(json.description);  //Replace concept description
