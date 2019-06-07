@@ -7,4 +7,5 @@ class Concept < ApplicationRecord
 
   scope :favorited, -> { where(favorited: true) }
   scope :not_favorited, -> { where(favorited: false) }
+  scope :drinking_age, -> { where(:age > 21 )}
 end

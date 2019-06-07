@@ -12,7 +12,7 @@ class ConceptsController < ApplicationController
       format.html {render :index}
       format.json {render json: @remaining_concepts}
     end
-  end
+  end   
 
   def new
     @user = current_user
