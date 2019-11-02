@@ -4,7 +4,7 @@ source 'https://rails-assets.org' do
 end
 
 gem 'omniauth-github'
-gem 'devise', '~> 4.4.3'
+gem 'devise', '~> 4.7.1'
 gem 'bootstrap', '~> 4.0.0'
 gem 'pry-rails'
 gem 'flexbox-rails', '~> 1.1'
